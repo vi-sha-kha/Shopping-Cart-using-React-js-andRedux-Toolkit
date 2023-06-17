@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../store/cartSlice";
-import Dashboard from "./Dashboard";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart);
@@ -45,7 +44,6 @@ const Cart = () => {
   );
   return (
     <>
-      <Dashboard />
       <h1>Cart Items</h1>
       {/* <h1>Cart</h1>
       {JSON.stringify(products)}); */}

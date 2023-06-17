@@ -52,7 +52,6 @@ function ProductDashboard() {
 
   return (
     <>
-      <Dashboard />
       <div className="row">{renderCards()}</div>
     </>
   );

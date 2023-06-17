@@ -23,7 +23,7 @@ const Dashboard = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav m-lg-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/product">
+                <Link className="nav-link" to="/">
                   Products
                 </Link>
               </li>

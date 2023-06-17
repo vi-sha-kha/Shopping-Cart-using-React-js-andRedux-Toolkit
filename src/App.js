@@ -10,10 +10,10 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Dashboard />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/product" element={<Product />} />
         </Routes>
       </div>
     </Router>
