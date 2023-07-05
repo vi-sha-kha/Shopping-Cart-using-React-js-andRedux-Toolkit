@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Dashboard from "./Dashboard";
+//import Dashboard from "./Dashboard";
 import { useDispatch } from "react-redux";
 import { add } from "../store/cartSlice";
 
-function ProductDashboard() {
+function Products() {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
 
@@ -57,4 +57,4 @@ function ProductDashboard() {
   );
 }
 
-export default ProductDashboard;
+export default Products;

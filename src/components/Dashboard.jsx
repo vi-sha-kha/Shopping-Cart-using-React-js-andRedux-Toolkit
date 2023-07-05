@@ -8,7 +8,10 @@ const Dashboard = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <div>NAVBAR</div>
+          <div style={{ fontSize: "40px", fontWeight: "bold" }}>
+            Online Store
+          </div>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -24,7 +27,12 @@ const Dashboard = () => {
             <ul className="navbar-nav m-lg-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  Products
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/search">
+                  Search Products
                 </Link>
               </li>
             </ul>
