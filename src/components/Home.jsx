@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //import Dashboard from "./Dashboard";
 import { useDispatch } from "react-redux";
 import { add } from "../store/cartSlice";
+import { Link } from "react-router-dom";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -45,6 +46,9 @@ function Products() {
               </button>
             </div>
           </div>
+          <Link to={`/product/${product.id}`}>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
         </div>
       </div>
     ));

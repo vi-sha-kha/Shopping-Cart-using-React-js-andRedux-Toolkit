@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 
 const SearchPage = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -48,10 +49,10 @@ const SearchPage = () => {
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">Price: Rs. {product.price}</p>
             </div>
-            <div>
-              <button className="btn btn-primary">Add to Cart</button>
-            </div>
           </div>
+          <Link to={`/product/${product.id}`}>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
         </div>
       </div>
     ));
