@@ -30,9 +30,11 @@ const Dashboard = () => {
                   Home
                 </Link>
               </li>
+            </ul>
+            <ul className="navbar-nav m-lg-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/search">
-                  Search Products
+                  SearchProducts
                 </Link>
               </li>
             </ul>
