@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Dashboard = () => {
-  const cartProducts = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,7 +42,7 @@ const Dashboard = () => {
             <ul className="navbar-nav">
               <li className="nav-item ">
                 <Link className="nav-link" to="/cart">
-                  My Cart {cartProducts.length}
+                  My Cart ({cartItems.length})
                 </Link>
               </li>
             </ul>

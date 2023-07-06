@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/cartSlice";
 
 const SearchPage = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const fetchProducts = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -28,6 +32,14 @@ const SearchPage = () => {
     setSearchResults(filteredProducts);
   };
 
+  const handleViewDetails = (product) => {
+    navigate(`/product/${product.id}`);
+  };
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
   const renderCards = () => {
     if (searchInput !== "" && searchResults.length === 0) {
       return <p>No search results found.</p>;
@@ -49,10 +61,21 @@ const SearchPage = () => {
               <h5 className="card-title">{product.title}</h5>
               <p className="card-text">Price: Rs. {product.price}</p>
             </div>
+            <div>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
-          <Link to={`/product/${product.id}`}>
-            <button className="btn btn-primary">View Details</button>
-          </Link>
+          <button
+            className="btn btn-primary"
+            onClick={() => handleViewDetails(product)}
+          >
+            View Details
+          </button>
         </div>
       </div>
     ));

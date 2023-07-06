@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-//import Dashboard from "./Dashboard";
 import { useDispatch } from "react-redux";
-import { add } from "../store/cartSlice";
+import { addToCart } from "../store/cartSlice";
 import { Link } from "react-router-dom";
 
 function Products() {
@@ -19,7 +18,7 @@ function Products() {
   }, []);
 
   const addtoCart = (product) => {
-    dispatch(add(product));
+    dispatch(addToCart(product));
   };
 
   const renderCards = () => {
@@ -55,9 +54,10 @@ function Products() {
   };
 
   return (
-    <>
+    <div>
+      <h1>Products</h1>
       <div className="row">{renderCards()}</div>
-    </>
+    </div>
   );
 }
 
