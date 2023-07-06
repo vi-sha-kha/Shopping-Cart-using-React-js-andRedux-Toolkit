@@ -40,7 +40,7 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>Cart Items</h1>
+      <h1 style={{ textAlign: "center", marginTop: "20px" }}>Cart Items</h1>
       <div className="row">{renderCartItems}</div>
     </div>
   );

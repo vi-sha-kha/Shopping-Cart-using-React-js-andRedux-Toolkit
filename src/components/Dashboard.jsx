@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Dashboard = () => {
@@ -7,11 +7,24 @@ const Dashboard = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light"
+        style={{ backgroundColor: "#7F9845" }}
+      >
         <div className="container-fluid">
-          <div style={{ fontSize: "40px", fontWeight: "bold" }}>
-            Online Store
-          </div>
+          <NavLink className="navbar-brand" to="/">
+            <h2
+              style={{
+                fontSize: "40px",
+                fontWeight: "bold",
+                fontStyle: "italic",
+                color: "#fff",
+                fontFamily: "Playfair Display, serif",
+              }}
+            >
+              Online Store
+            </h2>
+          </NavLink>
 
           <button
             className="navbar-toggler"
@@ -25,31 +38,60 @@ const Dashboard = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav m-lg-auto">
+            <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <NavLink
+                  exact
+                  className="nav-link"
+                  to="/"
+                  activeClassName="active"
+                  style={{
+                    marginRight: "10px",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    fontFamily: "Playfair Display, serif",
+                    textDecoration: "underline",
+                  }}
+                >
                   Home
-                </Link>
+                </NavLink>
               </li>
-            </ul>
-            <ul className="navbar-nav m-lg-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/search">
-                  SearchProducts
-                </Link>
+                <NavLink
+                  className="nav-link"
+                  to="/search"
+                  activeClassName="active"
+                  style={{
+                    marginRight: "10px",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    fontFamily: "Playfair Display, serif",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Search Products
+                </NavLink>
               </li>
-            </ul>
-            <ul className="navbar-nav">
-              <li className="nav-item ">
-                <Link className="nav-link" to="/cart">
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link"
+                  to="/cart"
+                  activeClassName="active"
+                  style={{
+                    marginRight: "10px",
+                    fontWeight: "bold",
+                    color: "#fff",
+                    fontFamily: "Playfair Display, serif",
+                    textDecoration: "underline",
+                  }}
+                >
                   My Cart ({cartItems.length})
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <h1>Happy Shopping!</h1>
     </>
   );
 };

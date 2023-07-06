@@ -63,7 +63,7 @@ const SearchPage = () => {
             </div>
             <div>
               <button
-                className="btn btn-primary"
+                className="btn btn-success"
                 onClick={() => handleAddToCart(product)}
               >
                 Add to Cart
@@ -71,7 +71,7 @@ const SearchPage = () => {
             </div>
           </div>
           <button
-            className="btn btn-primary"
+            className="btn btn-light"
             onClick={() => handleViewDetails(product)}
           >
             View Details
@@ -82,16 +82,30 @@ const SearchPage = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleFormSubmit}>
-        <input
-          type="text"
-          value={searchInput}
-          onChange={(event) => setSearchInput(event.target.value)}
-          placeholder="Enter a product name"
-        />
-        <button type="submit">Search</button>
-      </form>
+    <div className="container">
+      <div className="mt-4 d-flex justify-content-center">
+        <form
+          onSubmit={handleFormSubmit}
+          className="form-inline mb-4 justify-content-center"
+        >
+          <div
+            className="input-group"
+            style={{ maxWidth: "500px", width: "100%" }}
+          >
+            <input
+              type="text"
+              value={searchInput}
+              className="form-control me-2"
+              style={{ width: "50%" }}
+              onChange={(event) => setSearchInput(event.target.value)}
+              placeholder="Enter a product name"
+            />
+            <button className="btn btn-dark" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
 
       <div className="row">
         {isLoading ? (
@@ -102,7 +116,7 @@ const SearchPage = () => {
           renderCards()
         )}
       </div>
-    </>
+    </div>
   );
 };
 

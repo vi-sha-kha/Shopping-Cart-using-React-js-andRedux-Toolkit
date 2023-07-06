@@ -23,7 +23,7 @@ function Products() {
 
   const renderCards = () => {
     return products.map((product) => (
-      <div className="col-md-3" key={product.id}>
+      <div className="col-md-3 mb-4" key={product.id}>
         <div className="card" style={{ width: "18rem", minHeight: "400px" }}>
           <img
             src={product.image}
@@ -38,7 +38,7 @@ function Products() {
             </div>
             <div>
               <button
-                className="btn btn-primary"
+                className="btn btn-success"
                 onClick={() => addtoCart(product)}
               >
                 Add to Cart
@@ -46,7 +46,7 @@ function Products() {
             </div>
           </div>
           <Link to={`/product/${product.id}`}>
-            <button className="btn btn-primary">View Details</button>
+            <button className="btn btn-light">View Details</button>
           </Link>
         </div>
       </div>
@@ -55,7 +55,7 @@ function Products() {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1 style={{ textAlign: "center", marginTop: "20px" }}>Products</h1>
       <div className="row">{renderCards()}</div>
     </div>
   );
